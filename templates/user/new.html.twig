@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<div class="back">
+		<h1>Create new User</h1>
+		{% block content %}
+			{{ include('user/_form.html.twig') }}
+		{% endblock %}
+
+		<a href="{{ path('') }}">back to list</a>
+	</div>
+{% endblock %}

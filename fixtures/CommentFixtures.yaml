@@ -1,0 +1,9 @@
+App\Entity\Comment:
+   comment1_{1..500}:
+    nft_: '@nft_with_collection_*'
+    note: "<text()>"
+    dateCreation: '<dateTimeBetween(2022-07-05", "now")>'
+   comment2_{1..500}:
+    nft_: '@nft_without_collection_*'
+    note: "<text()>"
+    dateCreation: '<dateTimeBetween(2022-07-05", "now")>'

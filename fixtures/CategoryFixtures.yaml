@@ -1,0 +1,16 @@
+App\Entity\Category:
+  category_1:
+    name: "créatures adaptées"
+    description: "Explorez l'harmonie entre l'imaginaire et la modernité avec nos créatures adaptées. Découvrez comment les êtres mythiques s'épanouissent dans le monde urbain contemporain, fusionnant leurs caractéristiques uniques avec la vie moderne."
+    
+  category_2:
+    name: "créatures dangereuses"
+    description: "Osez affronter l'inconnu avec nos créatures dangereuses. Plongez dans un monde où le danger et le mystère se mêlent, et découvrez des créatures issues des coins les plus sombres de l'imaginaire."
+
+  category_3:
+    name: "créatures non adaptées"
+    description: "Retournez aux origines des légendes avec nos créatures non adaptées. Explorez des mondes intemporels où les êtres mythiques demeurent fidèles à leurs habitats d'antan, préservant leur essence originale."
+
+  category_4:
+    name: "créatures technologiques"
+    description: "Découvrez une collision captivante entre la magie et la technologie avec nos créatures technologiques. Explorez des créatures qui fusionnent l'ancien et le moderne, montrant comment la technologie peut réinventer même les mythes les plus anciens."

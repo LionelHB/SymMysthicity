@@ -1,0 +1,18 @@
+App\Entity\LikeFavori:
+  likeFavori1_{1..200}: 
+    nft_: '@nft_with_collection_*'
+    type: "favori"
+    dateAction: '<dateTimeBetween("2022-07-05", "now")>'
+  likeFavori2_{1..200}: 
+    nft_: '@nft_without_collection_*'
+    type: "favori"
+    dateAction: '<dateTimeBetween("2022-07-05", "now")>'
+
+  likeFavori3_{1..300}: 
+    nft_: '@nft_with_collection_*'
+    type: "like"
+    dateAction: '<dateTimeBetween("2022-07-05", "now")>'
+  likeFavori4_{1..300}: 
+    nft_: '@nft_without_collection_*'
+    type: "like"
+    dateAction: '<dateTimeBetween("2022-07-05", "now")>'

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nft index{% endblock %}
+
+{% block body %}
+    <h1>Nft index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Creator</th>
+                <th>DateCreation</th>
+                <th>DateFirstSale</th>
+                <th>DateLastSale</th>
+                <th>IdentificationKey</th>
+                <th>PathNft</th>
+                <th>Price</th>
+                <th>IsPublic</th>
+                <th>Quantity</th>
+                <th>View</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for nft in nfts %}
+            <tr>
+                <td>{{ nft.id }}</td>
+                <td>{{ nft.name }}</td>
+                <td>{{ nft.creator }}</td>
+                <td>{{ nft.dateCreation ? nft.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ nft.dateFirstSale ? nft.dateFirstSale|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ nft.dateLastSale ? nft.dateLastSale|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ nft.identificationKey }}</td>
+                <td>{{ nft.PathNft }}</td>
+                <td>{{ nft.price }}</td>
+                <td>{{ nft.isPublic ? 'Yes' : 'No' }}</td>
+                <td>{{ nft.quantity }}</td>
+                <td>{{ nft.view }}</td>
+                <td>{{ nft.description }}</td>
+                <td>
+                    <a href="{{ path('app_nft_show', {'id': nft.id}) }}">show</a>
+                    <a href="{{ path('app_nft_edit', {'id': nft.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_nft_new') }}">Create new</a>
+{% endblock %}

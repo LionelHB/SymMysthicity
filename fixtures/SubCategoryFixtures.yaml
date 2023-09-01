@@ -1,0 +1,60 @@
+App\Entity\SubCategory:
+  subCategory_1:
+    name: "Elfes"
+    category: '@category_1'
+    description: "Les \"Elfes\" où la magie de la fantasy rencontre les méandres de la finance moderne. Ces créatures légendaires ont fait la transition en tant que magnats de la finance, jonglant avec les chiffres comme ils le faisaient autrefois avec les éléments naturels. Plongez dans un monde où l'élégance ancestrale rencontre les rouages complexes de l'économie citadine, et découvrez comment ces êtres mystiques ont su réinventer leur existence dans le monde des affaires."
+
+  subCategory_2:
+    name: "Licornes"
+    category: '@category_1'
+    description: "Les \"Licornes\" où les légendaires licornes ont embrassé un nouveau rôle en tant que gardiennes magiques des espaces verts urbains. Ces créatures mythiques, autrefois associées aux mondes féeriques, utilisent maintenant leurs pouvoirs pour faire fleurir les plantes, danser les feuillages et apporter une touche de magie à chaque coin de parc. Découvrez comment ces licornes enchanteuses font revivre la nature au cœur de la cité, révélant la beauté et la magie cachées dans chaque pétale et chaque brin d'herbe."
+
+  subCategory_3:
+    name: "Satyres"
+    category: '@category_1'
+    description: "Les \"Satyres\" où la musique enchanteresse des satyres se mêle aux rues animées de la cité. Ces créatures festives et pleines de vie ont trouvé un nouveau public parmi les passants, divertissant les foules avec leurs mélodies envoûtantes et leurs danses enjouées. Découvrez comment les satyres, autrefois gardiens des bois, transforment maintenant les trottoirs en scènes de spectacle magiques, égayant les journées des citadins avec des moments de joie et d'évasion."
+
+  subCategory_4:
+    name: "Dragons"
+    category: '@category_2'
+    description: "Les \"Dragons\" où la majesté et le danger se rencontrent dans les cieux de la cité. Ces créatures mythiques, farouches et indomptables, règnent en maîtres sur les toits des immeubles, laissant leurs flammes embraser le ciel quand bon leur semble. Découvrez comment les dragons urbains défient les règles et réveillent les instincts anciens au cœur du moderne, rappelant que la magie et la menace peuvent coexister dans une danse enflammée entre les gratte-ciels."
+
+  subCategory_5:
+    name: "Krakens"
+    category: '@category_2'
+    description: "Les \"Krakens\" où la terreur des profondeurs trouve sa place dans les eaux tumultueuses des ports. Ces créatures titanesques, autrefois légendes marines, prennent vie pour réduire à néant les quais et faire sombrer les navires dans les abysses. Découvrez comment les krakens, gardiens des océans, rappellent que même dans un monde moderne, les puissances marines ancestrales peuvent surgir pour rappeler la fragilité des constructions humaines face aux forces primordiales."
+
+  subCategory_6:
+    name: "Minotaures"
+    category: '@category_2'
+    description: "Les \"Minotaures\" où les mystérieux minotaures ont trouvé refuge dans les méandres sombres des métros. Ces créatures mi-hommes mi-taureaux, autrefois gardiens de labyrinthes légendaires, errent maintenant dans les tunnels pour surprendre les voyageurs nocturnes. Découvrez comment les minotaures réveillent les peurs ancestrales dans les coins obscurs de la cité, rappelant que même au cœur de l'urbanité, les mythes anciens peuvent surgir pour hanter les voyageurs téméraires."
+
+  subCategory_7:
+    name: "Dryades"
+    category: '@category_3'
+    description: "Les \"Dryades\" où les mystérieuses dryades ont choisi les ombres des ruelles pour leur refuge. Ces créatures liées aux arbres, désormais effrayées par le monde des humains, se cachent dans la cité, se nourrissant comme elles le peuvent et gardant leurs raisons secrètes. Plongez dans un monde où le mystère se mêle à la mélancolie, où les dryades sont énigmatiques gardiennes des coins cachés, rappelant que même dans la modernité, des secrets ancestraux persistent dans les interstices de la ville."
+
+  subCategory_8:
+    name: "Sirènes"
+    category: '@category_3'
+    description: "Les \"Sirènes\" où les légendaires sirènes ont trouvé refuge dans les profondeurs urbaines. Ces créatures marines, dont les océans sont devenus inhospitaliers, se sont adaptées à la vie souterraine pour échapper à la pollution. Découvrez comment les sirènes des égouts survivent en harmonie avec les eaux troubles, partageant des mélodies envoûtantes qui rappellent le lien perdu entre l'homme et la mer. Plongez dans un monde où la tragédie et la résilience s'entrelacent, où les sirènes rappellent que même dans les ombres des villes, la magie des océans persiste."
+
+  subCategory_9:
+    name: "Trolls"
+    category: '@category_3'
+    description: "Les \"Trolls\" où les robustes trolls ont quitté les grandes métropoles pour les hauteurs des montagnes, cherchant refuge dans des villages reculés. Ces créatures massives et résistantes ont choisi une vie plus simple pour échapper à la modernité, survivant comme ils le peuvent dans les paysages accidentés. Plongez dans un monde où l'instinct de survie règne, où les trolls rappellent que même dans les recoins éloignés, les liens entre l'homme et la nature demeurent indomptables."
+
+  subCategory_10:
+    name: "Cyclopes"
+    category: '@category_4'
+    description: "Les \"Cyclopes\" où la force brute rencontre l'ingénierie moderne. Ces géants mythiques, autrefois solitaires, ont prêté leur force prodigieuse à des fins militaires et sécuritaires. Transformés en créatures mi-machine, les cyclopes sont désormais dotés d'outils aussi puissants que leur force naturelle, assurant la sécurité de la cité. Découvrez comment ces gardiens mécaniques veillent sur les rues avec une présence imposante, rappelant que la collaboration entre la magie et la technologie peut donner naissance à des protecteurs extraordinaires. Plongez dans un monde où la puissance ancestrale se fond avec l'innovation, et où les Cyclopes Sentinels sont les gardiens d'une sécurité inébranlable."
+
+  subCategory_11:
+    name: "Fées"
+    category: '@category_4'
+    description: "Les \"Fées\" où la magie ancestrale fusionne avec la technologie moderne. Ces fées, jadis gardiennes des lumières féeriques, ont accepté de se transformer en créatures mi-mécaniques pour assurer la luminosité des rues urbaines. Découvrez comment ces êtres enchantés ont embrassé l'innovation pour apporter un éclat de féérie à chaque coin de la cité, illuminant les rues de leur présence éclatante. Plongez dans un monde où la magie persiste dans l'union avec la technologie, et où les fées mécaniques sont les gardiennes d'une lueur précieuse au cœur de la modernité."
+
+  subCategory_12:
+    name: "Harpies"
+    category: '@category_4'
+    description: "Les \"Harpies\" où la beauté des créatures mythiques s'allie à la technologie de pointe pour protéger les métropoles. Ces harpies, à moitié mécaniques, se sont transformées en sentinelles volantes, surveillant les rues avec une vigilance inégalée pour prévenir tout danger. Découvrez comment ces créatures majestueuses en métal et en magie s'élèvent dans le ciel, rappelant que la fusion de l'imaginaire et de l'innovation peut engendrer des gardiennes aussi puissantes que gracieuses. Plongez dans un monde où la métamorphose rencontre les cieux modernes, et où les Harpies Mécaniques sont les protectrices de l'équilibre entre le féérique et la technologie."

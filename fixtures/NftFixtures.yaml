@@ -1,0 +1,62 @@
+App\Entity\Nft:
+    # nft_:
+        # name: "Speed Blitz"
+        # subCategory: "@subCategory_<numberBetween(1, 12)>"
+        # ownerUser: '@user_*'
+        # creator: "<userName()>"
+        # dateCreation: '<dateTimeBetween("1998-07-05", "2008-10-31")>'
+        # dateFirstSale: '<dateTimeBetween("2008-11-01", "2018-02-12")>'
+        # dateLastSale: '<dateTimeBetween("2018-02-13", "now")>'
+        # identificationKey: '<word(17)>'
+        # nftPath: "public/assets/nft"
+        # priceETH: <randomFloat(6, 0, 3)>
+        # priceEUR: 0
+        # priceUSD: 0
+        # isPublic: "<boolean(98)>"
+        # quantity: 1
+        # description: " Bienvenue dans l'univers captivant de \"Speed Blitz\" ! Ce NFT représente l'essence même de la vitesse et de la réactivité dans le monde des jeux vidéo.
+
+        #          Imaginez un coureur intrépide se lançant à pleine vitesse face caméra, laissant derrière lui un tourbillon d'effets lumineux, comme s'il traversait le continuum espace-temps. \"Speed Blitz\" est un véritable tour de force, capturant l'instant précis où l'agilité et les réflexes du protagoniste sont mis à l'épreuve.
+
+        #         Ce NFT fait partie de notre collection \"Cognitive Chronicles Game\", où chaque création est bien plus qu'une simple image. Au-delà de l'action palpitante, \"Speed Blitz\" évoque la puissance de la pensée rapide et de l'adaptabilité. Dans l'arène des jeux vidéo, la réactivité est une compétence clé, essentielle pour surmonter les défis, esquiver les obstacles et saisir les opportunités avec brio.
+
+        #         Préparez-vous à l'envolée de vitesse et d'émotion avec \"Speed Blitz\" ! Ajoutez ce NFT dynamique à votre collection et plongez dans une aventure où la rapidité rime avec intelligence."
+        # view: "<numberBetween(0, 100)>"
+        # addLike: "<numberBetween(0, 50)>"
+        # addFavory: "<numberBetween(0, 25)>"
+        # anthology: "@anthology_*"
+
+    nft_with_collection_{1..35}: 
+        name: "<userName()>"
+        subCategory: "@subCategory_<numberBetween(1, 12)>"
+        user: '@user_*'
+        creator: "<userName()>"
+        dateCreation: '<dateTimeBetween("1998-07-05", "2008-10-31")>'
+        dateFirstSale: '<dateTimeBetween("2008-11-01", "2018-02-12")>'
+        dateLastSale: '<dateTimeBetween("2018-02-13", "now")>'
+        identificationKey: '<word(17)>'
+        PathNft: "public/assets/nft"
+        price: <randomFloat(6, 0, 3)>
+        isPublic: "<boolean(98)>"
+        quantity: "<numberBetween(1, 3)>"
+        description: "<paragraph()>"
+        view: "<numberBetween(0, 100)>"
+        anthology: "@anthology_*"
+
+    nft_without_collection_{1..85}: 
+        name: "<userName()>"
+        subCategory: "@subCategory_<numberBetween(1, 12)>"
+        user: '@user_*'
+        creator: "<userName()>"
+        dateCreation: '<dateTimeBetween("1998-07-05", "2008-10-31")>'
+        dateFirstSale: '<dateTimeBetween("2008-11-01", "2018-02-12")>'
+        dateLastSale: '<dateTimeBetween("2018-02-13", "now")>'
+        identificationKey: '<word(17)>'
+        PathNft: "fedefgdv"
+        price: <randomFloat(6, 0, 3)>
+        isPublic: "<boolean(98)>"
+        quantity: "<numberBetween(1, 3)>"
+        description: "<paragraph()>"
+        view: "<numberBetween(0, 100)>"
+
+        

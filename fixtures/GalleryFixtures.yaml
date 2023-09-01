@@ -1,0 +1,7 @@
+App\Entity\Gallery:
+  gallery_{1..300}: 
+    name: "<word()>"
+    isPublic: "<boolean(90)>"
+    user: '@user_*'
+    description: "<paragraph()>"
+    dateCreation: '<dateTimeBetween(2022-07-05", "now")>'
