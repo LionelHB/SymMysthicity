@@ -4,11 +4,12 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
-use ApiPlatform\Core\Bridge\Doctrine\MongoDbOdm\Filter\SearchFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
+
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
@@ -42,7 +43,7 @@ class Category
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['sousCategory:list', 'sousCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:item'])]
+    #[Groups(['sousCategory:list', 'sousCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:item', 'category:list'])]
     private ?string $name = null;
 
     #[ORM\Column(type: Types::TEXT)]
