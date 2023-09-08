@@ -40,18 +40,19 @@ class Category
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['subCategory:list', 'subCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:item', 'category:list'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['sousCategory:list', 'sousCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:item', 'category:list'])]
+    #[Groups(['subCategory:list', 'subCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:item', 'category:list'])]
     private ?string $name = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    #[Groups(['category:item'])]
+    #[Groups(['sousCategory:list', 'sousCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:item', 'category:list'])]
     private ?string $description = null;
 
    
-    
+    #[Groups(['sousCategory:list', 'sousCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:item', 'category:list'])]
     private Collection $subCategory;
 
     public function __construct()
@@ -63,7 +64,6 @@ class Category
     {
         return $this->id;
     }
-    #[Groups(['sousCategory:list', 'sousCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:item'])]
     public function getName(): ?string
     {
         return $this->name;

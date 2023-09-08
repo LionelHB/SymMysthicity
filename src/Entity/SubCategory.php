@@ -30,9 +30,10 @@ use Symfony\Component\Serializer\Annotation\Groups;
     ]
 )]
 #[ApiFilter(
-    SearchFilter::class, properties:[
+    SearchFilter::class,
+    properties: [
         'name' => 'partial',
-        'category.name'=>'partial',
+        'category.name' => 'partial',
     ]
 )]
 class SubCategory
@@ -43,18 +44,18 @@ class SubCategory
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['sousCategory:list', 'sousCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:item'])]
+    #[Groups(['subCategory:list', 'subCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:list', 'category:item'])]
     private ?string $name = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    #[Groups(['subCategory:item'])]
+    #[Groups(['subCategory:list', 'subCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:list', 'category:item'])]
     private ?string $description = null;
 
     #[ORM\OneToMany(mappedBy: 'subCategory', targetEntity: Nft::class)]
     private Collection $nft;
 
     #[ORM\ManyToOne(inversedBy: 'subCategory')]
-    #[Groups(['sousCategory:list', 'sousCategory:item', 'nft:post', 'nft:list', 'nft:item'])]
+    #[Groups(['subCategory:list', 'subCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:list', 'category:item'])]
     private ?Category $category = null;
 
     public function __construct()
