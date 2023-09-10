@@ -48,11 +48,11 @@ class Category
     private ?string $name = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    #[Groups(['sousCategory:list', 'sousCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:item', 'category:list'])]
+    #[Groups(['subCategory:list', 'subCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:item', 'category:list'])]
     private ?string $description = null;
 
    
-    #[Groups(['sousCategory:list', 'sousCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:item', 'category:list'])]
+    #[Groups(['subCategory:list', 'subCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:item', 'category:list'])]
     private Collection $subCategory;
 
     public function __construct()
