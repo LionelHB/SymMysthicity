@@ -51,7 +51,8 @@ class Category
     #[Groups(['subCategory:list', 'subCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:item', 'category:list'])]
     private ?string $description = null;
 
-   
+
+    #[ORM\OneToMany(targetEntity:"SubCategory", mappedBy:"category")]
     #[Groups(['subCategory:list', 'subCategory:item', 'nft:post', 'nft:list', 'nft:item', 'category:item', 'category:list'])]
     private Collection $subCategory;
 
