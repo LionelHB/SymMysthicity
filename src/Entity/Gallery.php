@@ -44,10 +44,11 @@ class Gallery
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['nft:item', 'user:item', 'gallery:item', 'gallery:list'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['nft:item', 'user:item', 'gallery:item'])]
+    #[Groups(['nft:item', 'user:item', 'gallery:item', 'gallery:list'])]
     private ?string $name = null;
 
     #[ORM\Column]
@@ -55,15 +56,15 @@ class Gallery
     private ?bool $isPublic = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
-    #[Groups(['gallery:item'])]
+    #[Groups(['gallery:item', 'gallery:list'])]
     private ?string $description = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[Groups(['gallery:item'])]
+    #[Groups(['gallery:item', 'gallery:list'])]
     private ?\DateTimeInterface $creationDate = null;
 
     #[ORM\ManyToOne(inversedBy: 'gallery')]
-    #[Groups(['gallery:item'])]
+    #[Groups(['gallery:item', 'gallery:list'])]
     private ?User $owner = null;
 
 
