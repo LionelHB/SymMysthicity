@@ -119,6 +119,7 @@ class Nft
     private ?Anthology $anthology = null;
 
     #[ORM\OneToMany(mappedBy: 'nft', targetEntity: LikesFavoris::class)]
+    #[Groups(['nft:item'])]
     private Collection $likesFavoris;
 
     #[ORM\OneToMany(mappedBy: 'nft', targetEntity: Comment::class)]
@@ -126,11 +127,13 @@ class Nft
     private Collection $comments;
 
     #[ORM\ManyToOne(inversedBy: 'nft')]
+    #[Groups(['nft:item'])]
     private ?SubCategory $subCategory = null;
 
   
-    #[Groups(['nft:item'])]
+   
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['nft:item'])]
     private ?string $description = null;
     #[Groups(['nft:item', 'nft:list', 'gallery:item', ])]
     #[ORM\ManyToOne(inversedBy: 'nft')]
