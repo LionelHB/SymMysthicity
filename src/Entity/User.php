@@ -76,7 +76,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $lastname = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['nft:post', 'nft:list', 'nft:item', 'user:post', 'user:list', 'user:item', 'gallery:item'])]
+    #[Groups(['nft:post', 'nft:list', 'nft:item', 'user:post', 'user:list', 'user:item', 'gallery:item', 'gallery:list'])]
     private ?string $username = null;
 
     #[ORM\Column]
@@ -86,11 +86,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?\DateTimeInterface $birthdayDate = null;
 
     #[ORM\OneToMany(mappedBy: 'owner', targetEntity: Gallery::class)]
-    #[Groups(['user:post', 'user:list', 'user:item'])]
+    #[Groups(['user:post', 'user:list', 'user:item', 'gallery:item', 'gallery:list'])]
     private Collection $gallery;
 
     #[ORM\OneToMany(mappedBy: 'owner', targetEntity: Nft::class)]
-    #[Groups(['user:post', 'user:list', 'user:item'])]
+    #[Groups(['user:post', 'user:list', 'user:item', 'gallery:item',  'gallery:list'])]
     private Collection $nft;
 
     public function __construct()

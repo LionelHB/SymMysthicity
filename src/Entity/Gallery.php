@@ -52,7 +52,7 @@ class Gallery
     private ?string $name = null;
 
     #[ORM\Column]
-    #[Groups(['gallery:item'])]
+    #[Groups(['nft:item', 'user:item', 'gallery:item', 'gallery:list'])]
     private ?bool $isPublic = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
