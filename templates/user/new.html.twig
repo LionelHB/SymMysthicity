@@ -2,12 +2,14 @@
 
 
 {% block body %}
-	<div class="back">
-		<h1>Create new User</h1>
-		{% block content %}
-			{{ include('user/_form.html.twig') }}
-		{% endblock %}
+	<div class="containerNewUser">
+		<div class="back">
+			<h1>Create new User</h1>
+			{% block content %}
+				{{ include('user/_form.html.twig') }}
+			{% endblock %}
 
-		<a href="{{ path('') }}">back to list</a>
+			<a href="{{ path('') }}">back to list</a>
+		</div>
 	</div>
 {% endblock %}

@@ -6,7 +6,7 @@
 
 {% block pagecontent %}
 	<div class="mesyeux">
-  
+
 		<form method="post">
 			{% if error %}
 				<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -24,21 +24,9 @@
 			<label for="inputEmail">Identifiant</label>
 			<input type="text" value="{{ last_username }}" placeholder="Nom ou email" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
 			<label for="inputPassword">Mot de passe</label>
-			<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+			<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Mot de passe" autocomplete="current-password" required>
 
-			<input
-			type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-			{#
-			        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-			        See https://symfony.com/doc/current/security/remember_me.html
-			
-			        <div class="checkbox mb-3">
-			            <label>
-			                <input type="checkbox" name="_remember_me"> Remember me
-			            </label>
-			        </div>
-			    #}
+			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
 			<button class="btn btn-lg btn-outline-success my-4" type="submit">
 				Se connecter

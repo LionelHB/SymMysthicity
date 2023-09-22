@@ -1,11 +1,24 @@
+
+
 <header>
 	<nav>
 		<div class="firstContain">
+			{% if app.user %}
+				<span class="connected-indicator">
+					<i class="fas fa-check-circle"></i>
+					Connecté
+				</span>
+			{% endif %}
+
+			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+				<a href="{{ path('app_logout') }}" class="deconnexionBTN">Déconnexion</a>
+			{% endif %}
+
 			<div class="containerH1">
 				<h1>Mysthicity</h1>
 			</div>
 			<div class="containerH2">
-				<h2>DashBoard Admin</h2>
+				<h2>Tableau de bord Admin</h2>
 			</div>
 		</div>
 
@@ -13,19 +26,19 @@
 		<div class="secondContain">
 			<div class="listNav">
 				<ul>
-					<li>Utilisateurs</li>
-					<li>NFTs</li>
-					<li>Galeries</li>
-					<li>Catégories</li>
-					<li>Sous-Catégories</li>
-					<li>Commentaires</li>
-					<li>Statistiques</li>
+					<a href="{{ path('app_user_index') }}" <li>Utilisateurs</li></a>
+					<a href="{{ path('app_user_index') }}" <li>NFTs</li></a>
+					<a href="{{ path('app_gallery_index') }}" <li>Galeries</li></a>
+					<a href="{{ path('app_category_index') }}" <li>Catégories</li></a>
+					<a href="{{ path('app_sub_category_index') }}" <li>Sous-Catégories</li></a>
+					<a href="{{ path('app_user_index') }}" <li>Commentaires</li></a>
+					<a href="{{ path('app_user_index') }}" <li>Statistiques</li></a>
 				</ul>
 
 			</div>
 		</div>
 		<div class="thirdContain">
-			<p>Cours ETH</p>
+		<a href="{{ path('app_eth') }}"	<p>Cours ETH</p></a>
 		</div>
 	</nav>
 

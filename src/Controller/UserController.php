@@ -22,6 +22,7 @@ class UserController extends AbstractController
     #[Route('/', name: 'app_user_index', methods: ['GET'])]
     public function index(UserRepository $userRepository, Request $request, PagerPaginatorInterface $paginator): Response
     {
+     
         $users = $paginator->paginate(
             $userRepository->findAll(),
             $request->query->getInt('page', 1),
@@ -33,24 +34,31 @@ class UserController extends AbstractController
     }
 
     #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
-    public function new(Request $request, UserRepository $userRepository): Response
+    public function new(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $passwordHasher): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
-
+    
         if ($form->isSubmitted() && $form->isValid()) {
-            $userRepository->save($user, true);
-
-            return $this->redirectToRoute('', [], Response::HTTP_SEE_OTHER);
+            // Utilisez le UserPasswordHasherInterface pour hasher le mot de passe
+            $hashedPassword = $passwordHasher->hashPassword($user, $user->getPassword());
+            $user->setPassword($hashedPassword);
+    
+            // Vous pouvez ensuite sauvegarder l'utilisateur en base de données
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+            $entityManager->flush();
+    
+            return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
         }
-
+    
         return $this->renderForm('user/new.html.twig', [
             'user' => $user,
             'form' => $form,
-          
         ]);
     }
+    
 
     #[Route('/{id}', name: 'app_user_show', methods: ['GET'])]
     public function show(User $user): Response

@@ -26,21 +26,34 @@ security:
             pattern: ^/api
             stateless: true
             jwt: ~
+        
+        main:
+            lazy: true
+            provider: app_user_provider
+            custom_authenticator: App\Security\UserAuthenticator
+            
+
+            logout:
+                path: app_logout
+                target: /login
 
     access_control:
-        # - { path: ^/api/login, roles: PUBLIC_ACCESS }
-        # - { path: ^/api/docs, roles: PUBLIC_ACCESS }
-        # - { path: ^/api/register, roles: PUBLIC_ACCESS }
-        # - {
-        #       path: ^/api/nfts,
-        #       roles: IS_AUTHENTICATED_FULLY,
-        #       method: [POST, PUT, DELETE],
-        #   }
-        # - {
-        #       path: ^/api/users,
-        #       roles: IS_AUTHENTICATED_FULLY,
-        #       method: [POST, PUT, DELETE],
-        #   }
+        - { path: ^/login, roles: PUBLIC_ACCESS  }
+        - { path: ^/logout, roles: PUBLIC_ACCESS  }
+        - { path: ^/api/login, roles: PUBLIC_ACCESS }
+        - { path: ^/api/docs, roles: PUBLIC_ACCESS }
+        - { path: ^/api/register, roles: PUBLIC_ACCESS }
+        - {
+              path: ^/api/nfts,
+              roles: IS_AUTHENTICATED_FULLY,
+              method: [POST, PUT, DELETE],
+          }
+        - {
+              path: ^/api/users,
+              roles: IS_AUTHENTICATED_FULLY,
+              method: [POST, PUT, DELETE],
+          }
         
-        # - { path: ^/api/adresses, roles: IS_AUTHENTICATED_FULLY }
-        # - { path: ^/api/login_check, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/adresses, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api/login_check, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: ROLE_ADMIN }

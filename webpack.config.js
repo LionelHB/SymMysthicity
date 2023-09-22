@@ -23,6 +23,7 @@ Encore
     .addEntry("scripts", "./assets/scripts/main.ts")
     .addStyleEntry("styles", "./assets/styles/main.scss")
 
+
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
 

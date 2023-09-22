@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block pagecontent %}
+	<div class="ethCours">
+		<div class="EthMenu">
+			<h1>Cours de l'ETH</h1>
+			{% if ethData is not null %}
+				<img src="{{ ethData.image }}" alt="Image de l'Ethereum">
+			</div>
+			<h2>Prix actuel de l'éthérum (Ethereum)</h2>
+
+
+			<p>Le prix actuel de l'éthérum est :
+				<stong>{{ ethData.current_price }}</stong>
+				EUR</p>
+
+			<p>Prix le plus élevé des dernières 24 heures :
+				<stong>{{ ethData.high_24h }}</stong>
+				EUR</p>
+			<p>Prix le plus bas des dernières 24 heures :
+				<stong>{{ ethData.low_24h }}</stong>
+				EUR</p>
+			<p>Prix le plus élevé jamais atteint :
+				<stong>{{ ethData.ath }}</stong>
+				EUR</p>
+			<p>Prix le plus bas jamais atteint :
+				<stong>{{ ethData.atl }}</stong>
+				EUR</p>
+		{% else %}
+			<p>Données non disponibles</p>
+		{% endif %}
+	</div>
+{% endblock %}

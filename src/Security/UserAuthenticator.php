@@ -44,12 +44,10 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
 
     public function authenticate(Request $request): Passport
     {
-        $emailOrName = $request->request->get('email', '');
+        $email = $request->request->get('email', '');
     
         return new Passport(
-            new UserBadge($emailOrName, function ($userIdentifier) {
-                return $this->userRepository->findByEmailOrName($userIdentifier);
-            }),
+            new UserBadge($email),
             new PasswordCredentials($request->request->get('password', '')),
             [
                 new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
@@ -65,21 +63,9 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
         }
     
         // Redirect to a default page after successful authentication
-        return new RedirectResponse($this->urlGenerator->generate('app_home'));
+        return new RedirectResponse($this->urlGenerator->generate('app_user_index'));
     }
     
-
-    public function onKernelRequest(RequestEvent $event)
-    {
-        $request = $event->getRequest();
-
-        // Check if user is not authenticated and the requested path is not the login page
-        if (!$this->security->getUser() && $request->getPathInfo() !== '/login') {
-            // Redirect to the login page
-            $url = $this->urlGenerator->generate(self::LOGIN_ROUTE);
-            $event->setResponse(new RedirectResponse($url));
-        }
-    }
 
     public static function getSubscribedEvents()
     {

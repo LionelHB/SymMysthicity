@@ -1,0 +1,14 @@
+.deconnexionBTN{
+    background-color: rgb(107, 13, 13);
+   
+    border-radius: 20px;
+    padding: 5%;
+    color: white;
+    margin-left: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    &:hover{
+        background-color: white;
+        color: rgb(107, 13, 13);
+    }
+}
