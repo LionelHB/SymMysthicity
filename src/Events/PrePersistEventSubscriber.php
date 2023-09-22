@@ -23,8 +23,7 @@ class PrePersistEventSubscriber implements EventSubscriber
     {
         $entity = $args->getObject();
 
-        if ($entity instanceof User) { // Remplacez "YourEntity" par le nom de votre entité
-            // Votre logique de pré-persist ici
+        if ($entity instanceof User) { 
         }
     }
 }

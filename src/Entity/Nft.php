@@ -61,11 +61,11 @@ class Nft
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['nft:post', 'nft:list', 'nft:item'])]
+    #[Groups(['nft:post', 'nft:list', 'nft:item', 'gallery:item', 'gallery:list'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['user:post', 'user:list', 'user:item', 'category:item', 'subCategory:item', 'gallery:item'])]
+    #[Groups(['user:post', 'user:list', 'user:item', 'category:item', 'subCategory:item', 'gallery:item', 'gallery:list'])]
     private ?string $name = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -88,7 +88,7 @@ class Nft
     private ?string $identificationKey = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['nft:item', 'gallery:item', 'gallery:list', 'user:item', 'subCategory:item', 'category:item', 'favoris:item'])]
+    #[Groups(['nft:item', 'gallery:item', 'gallery:list', 'user:item', 'subCategory:item', 'category:item', 'favoris:item', 'user:item', 'user:list'])]
     private ?string $nftPath = null;
 
     #[ORM\Column]

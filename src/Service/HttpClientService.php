@@ -9,11 +9,7 @@ use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
-/**
- * Class HttpClientService.php
- *
- * @author Kevin Tourret
- */
+
 class HttpClientService
 {
 

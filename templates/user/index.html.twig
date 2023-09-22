@@ -5,65 +5,67 @@
 {% block body %}
 	{% block pagecontent %}
 		<h1>Liste des utilisateurs</h1>
-
-		<table>
-			<thead>
-				<tr>
-					<th>{{ knp_pagination_sortable(
+		<div class="user-list">
+			<table>
+				<thead>
+					<tr>
+						<th>{{ knp_pagination_sortable(
                     users,
                     'Email',
                     'email')|raw }}</th>
-					<th>{{ knp_pagination_sortable(
+						<th>{{ knp_pagination_sortable(
                     users,
                     'Firstname',
                     'firstname')|raw }}</th>
-					<th>{{ knp_pagination_sortable(
+						<th>{{ knp_pagination_sortable(
                     users,
                     'Lastname',
                     'lastname')|raw }}</th>
-					<th>{{ knp_pagination_sortable(
+						<th>{{ knp_pagination_sortable(
                     users,
                     'Username',
                     'username')|raw }}</th>
-					<th>{{ knp_pagination_sortable(
+						<th>{{ knp_pagination_sortable(
                     users,
                     'IsMan',
                     'isman')|raw }}</th>
-					<th>{{ knp_pagination_sortable(
+						<th>{{ knp_pagination_sortable(
                     users,
                     'BirthdayDate',
                     'birthdaydate')|raw }}</th>
-					<th>{{ knp_pagination_sortable(
+						<th>{{ knp_pagination_sortable(
                     users,
                     'actions',
                     'action')|raw }}</th>
-				</tr>
-			</thead>
-			<tbody>
-				{% for user in users %}
-					<tr>
-						<td>{{ user.email }}</td>
-						<td>{{ user.firstname }}</td>
-						<td>{{ user.lastname }}</td>
-						<td>{{ user.username }}</td>
-						<td>{{ user.isMan ? 'Yes' : 'No' }}</td>
-						<td>{{ user.birthdayDate ? user.birthdayDate|date('Y-m-d H:i:s') : '' }}</td>
-						<td>
-							<a class="btn btn-outline-dark" href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
-							<a class="btn btn-outline-dark" href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
-						</td>
 					</tr>
-				{% else %}
-					<tr>
-						<td colspan="10">no records found</td>
-					</tr>
-				{% endfor %}
-			</tbody>
-		</table>
+				</thead>
+				<tbody>
+
+					{% for user in users %}
+						<tr>
+							<td>{{ user.email }}</td>
+							<td>{{ user.firstname }}</td>
+							<td>{{ user.lastname }}</td>
+							<td>{{ user.username }}</td>
+							<td>{{ user.isMan ? 'Yes' : 'No' }}</td>
+							<td>{{ user.birthdayDate ? user.birthdayDate|date('Y-m-d H:i:s') : '' }}</td>
+							<td>
+								<a class="btn btn-outline-dark" href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
+								<a class="btn btn-outline-dark" href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="10">no records found</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
 		<div class="pagination">
 			{{ knp_pagination_render(users) }}
 		</div>
 
-		
+
 	{% endblock %}
 {% endblock %}

@@ -51,7 +51,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['user:post', 'user:list', 'user:item'])]
+    #[Groups(['user:post', 'user:list', 'user:item', 'gallery:list'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
@@ -86,7 +86,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?\DateTimeInterface $birthdayDate = null;
 
     #[ORM\OneToMany(mappedBy: 'owner', targetEntity: Gallery::class)]
-    #[Groups(['user:post', 'user:list', 'user:item', 'gallery:item', 'gallery:list'])]
+    #[Groups(['user:post', 'user:list', 'user:item', 'gallery:item', 'gallery:item', 'gallery:list'])]
     private Collection $gallery;
 
     #[ORM\OneToMany(mappedBy: 'owner', targetEntity: Nft::class)]
