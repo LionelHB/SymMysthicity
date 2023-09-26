@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Statistiques
+{% endblock %}
+
+{% block pagecontent %}
+	<div class="titleImg">
+		<h1>Statistiques</h1>
+		<img src="assets/design/imagestats.webp">
+	</div>
+	<h2>Nous avons sur le site :
+	</h2>
+
+	<div class="statsListTotal">
+		<div class="statsList">
+			<h3>{{ usersCount }}
+			</h3>
+			<p>utilisateurs</p>
+		</div>
+		<div class="statsList">
+			<h3>{{ nftsCount }}</h3>
+			<p>NFT</p>
+		</div>
+		<div class="statsList">
+			<h3>{{ galleriesCount }}</h3>
+			<p>galeries</p>
+		</div>
+		<div class="statsList">
+			<h3>{{ categoriesCount }}</h3>
+			<p>catégories</p>
+		</div>
+		<div class="statsList">
+			<h3>{{ subCategoriesCount }}</h3>
+			<p>sous-catégories</p>
+		</div>
+	</div>
+
+
+{% endblock %}

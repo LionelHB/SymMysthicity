@@ -1,37 +1,54 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}SubCategory index{% endblock %}
+{% block title %}Liste Sous-categories
+{% endblock %}
 
-{% block body %}
-    <h1>SubCategory index</h1>
+{% block pagecontent %}
+	<h1>Liste des Sous-categories</h1>
+		<a class="linkCreateNew" href="{{ path('app_sub_category_new') }}">Ajouter sous-categorie</a>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for sub_category in sub_categories %}
-            <tr>
-                <td>{{ sub_category.id }}</td>
-                <td>{{ sub_category.name }}</td>
-                <td>{{ sub_category.description }}</td>
-                <td>
-                    <a href="{{ path('app_sub_category_show', {'id': sub_category.id}) }}">show</a>
-                    <a href="{{ path('app_sub_category_edit', {'id': sub_category.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('app_sub_category_new') }}">Create new</a>
+	<div class="tableGeneral">
+		<table>
+			<thead>
+				<tr>
+					<th>{{ knp_pagination_sortable(
+                    sub_categories,
+                    'Nom',
+                    'name')|raw }}</th>
+					<th>{{ knp_pagination_sortable(
+                    sub_categories,
+                    'Description',
+                    'description')|raw }}</th>
+                    <th>{{ knp_pagination_sortable(
+                    sub_categories,
+                    'Actions',
+                    'action')|raw }}</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for sub_category in sub_categories %}
+					<tr>
+						<td>{{ sub_category.name }}</td>
+						<td>{{ sub_category.description }}</td>
+
+						<td class='actionBtnContainer'>
+							<a class="actionBtn" href="{{ path('app_sub_category_show', {'id': sub_category.id}) }}">show</a>
+							<a class="actionBtn" href="{{ path('app_sub_category_edit', {'id': sub_category.id}) }}">edit</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="4">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<div class="pagination">
+			{{ knp_pagination_render(sub_categories) }}
+		</div>
+	</div>
+
+
 {% endblock %}

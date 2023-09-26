@@ -16,6 +16,13 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class GalleryRepository extends ServiceEntityRepository
 {
+    public function findAllOrderedByName()
+    {
+        return $this->createQueryBuilder('n')
+            ->orderBy('n.name', 'ASC') // Vous pouvez utiliser 'DESC' pour un tri descendant
+            ->getQuery()
+            ->getResult();
+    }
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Gallery::class);

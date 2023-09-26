@@ -1,70 +1,77 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nft{% endblock %}
+{% block title %}
+	{{ nft.name }}
+{% endblock %}
 
-{% block body %}
-    <h1>Nft</h1>
+{% block pagecontent %}
+	<h1>{{ nft.name }}</h1>
+	<div class="tableGeneral ShowTable showNft">
+		<table class="table">
+			<img src='{{ nft.nftPath }}'>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ nft.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ nft.name }}</td>
-            </tr>
-            <tr>
-                <th>Creator</th>
-                <td>{{ nft.creator }}</td>
-            </tr>
-            <tr>
-                <th>DateCreation</th>
-                <td>{{ nft.dateCreation ? nft.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>DateFirstSale</th>
-                <td>{{ nft.dateFirstSale ? nft.dateFirstSale|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>DateLastSale</th>
-                <td>{{ nft.dateLastSale ? nft.dateLastSale|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>IdentificationKey</th>
-                <td>{{ nft.identificationKey }}</td>
-            </tr>
-            <tr>
-                <th>PathNft</th>
-                <td>{{ nft.PathNft }}</td>
-            </tr>
-            <tr>
-                <th>Price</th>
-                <td>{{ nft.price }}</td>
-            </tr>
-            <tr>
-                <th>IsPublic</th>
-                <td>{{ nft.isPublic ? 'Yes' : 'No' }}</td>
-            </tr>
-            <tr>
-                <th>Quantity</th>
-                <td>{{ nft.quantity }}</td>
-            </tr>
-            <tr>
-                <th>View</th>
-                <td>{{ nft.view }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ nft.description }}</td>
-            </tr>
-        </tbody>
-    </table>
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ nft.id }}</td>
+				</tr>
+				<tr>
+					<th>Nom</th>
+					<td>{{ nft.name }}</td>
+				</tr>
+				<tr>
+					<th>Createur</th>
+					<td>{{ nft.creator }}</td>
+				</tr>
+				<tr>
+					<th>Date de création</th>
+					<td>{{ nft.creationDate ? nft.creationDate|date('d-m-Y') : '' }}</td>
+				</tr>
+				<tr>
+					<th>Date de première vente</th>
+					<td>{{ nft.firstDateSale ? nft.firstDateSale|date('d-m-Y') : '' }}</td>
+				</tr>
+				<tr>
+					<th>Date de dernière vente</th>
+					<td>{{ nft.lastDateSale ? nft.lastDateSale|date('d-m-Y') : '' }}</td>
+				</tr>
+							<tr>
+					<th>Prix en ETH</th>
+					<td>{{ nft.price }}</td>
+				</tr>
+				<tr>
+					<th>Rendu publique</th>
+					<td>{{ nft.isPublic ? 'Oui' : 'Non' }}</td>
+				</tr>
+				<tr>
+					<th>Quantitée</th>
+					<td>{{ nft.quantity }}</td>
+				</tr>
+				<tr>
+					<th>Nombre de vues</th>
+					<td>{{ nft.view }}</td>
+				</tr>
+				<tr>
+					<th>Nombre de "j'aime"</th>
+					<td>{{ nft.likes }}</td>
+				</tr>
+				<tr>
+					<th>Nombre de fois mit en favori</th>
+					<td>{{ nft.favoris }}</td>
+				</tr>
+				<tr>
+					<th>Description</th>
+					<td>{{ nft.description }}</td>
+				</tr>
+			</tbody>
+		</table>
 
-    <a href="{{ path('app_nft_index') }}">back to list</a>
+	</div>
+<div class="bottomBtnShow">
+	<a class="btnToBack" href="{{ path('app_nft_index') }}">Retour</a>
 
-    <a href="{{ path('app_nft_edit', {'id': nft.id}) }}">edit</a>
+	<a class="btnToBack" href="{{ path('app_nft_edit', {'id': nft.id}) }}">Éditer</a>
 
-    {{ include('nft/_delete_form.html.twig') }}
+	{{ include('nft/_delete_form.html.twig') }}
+    	</div>
 {% endblock %}

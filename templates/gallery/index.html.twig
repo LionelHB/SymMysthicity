@@ -1,41 +1,60 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Gallery index{% endblock %}
+{% block title %}Liste galeries
+{% endblock %}
 
-{% block body %}
-    <h1>Gallery index</h1>
+{% block pagecontent %}
+	<h1>Liste des galeries</h1>
+		<a class="linkCreateNew" href="{{ path('app_gallery_new') }}">Ajouter galerie</a>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>IsPublic</th>
-                <th>Description</th>
-                <th>CreationDate</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for gallery in galleries %}
-            <tr>
-                <td>{{ gallery.id }}</td>
-                <td>{{ gallery.name }}</td>
-                <td>{{ gallery.isPublic ? 'Yes' : 'No' }}</td>
-                <td>{{ gallery.description }}</td>
-                <td>{{ gallery.creationDate ? gallery.creationDate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_gallery_show', {'id': gallery.id}) }}">show</a>
-                    <a href="{{ path('app_gallery_edit', {'id': gallery.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	<div class="tableGeneral">
+		<table>
+			<thead>
+				<tr>
+					<th>{{ knp_pagination_sortable(
+                    galleries,
+                    'Name',
+                    'name')|raw }}</th>
+					
+					<th>{{ knp_pagination_sortable(
+                    galleries,
+                    'Description',
+                    'description')|raw }}</th>
+					<th>{{ knp_pagination_sortable(
+                    galleries,
+                    'Date de création',
+                    'CreationDate')|raw }}</th>
+					<th>{{ knp_pagination_sortable(
+                    galleries,
+                    'Actions',
+                    'action')|raw }}</th>
+				</tr>
+			</thead>
 
-    <a href="{{ path('app_gallery_new') }}">Create new</a>
+			<tbody>
+				{% for gallery in galleries %}
+					<tr>
+
+						<td>{{ gallery.name }}</td>
+				
+						<td>{{ gallery.description }}</td>
+						<td>{{ gallery.creationDate ? gallery.creationDate|date('d-m-Y') : '' }}</td>
+						<td class='actionBtnContainer'>
+							<a class="actionBtn" href="{{ path('app_gallery_show', {'id': gallery.id}) }}">show</a>
+							<a class="actionBtn" href="{{ path('app_gallery_edit', {'id': gallery.id}) }}">edit</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="6">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<div class="pagination">
+			{{ knp_pagination_render(galleries) }}
+		</div>
+	</div>
+
+
 {% endblock %}

@@ -15,8 +15,9 @@ body {
 
         .firstContain {
             h1 {
-                padding-top: 10%;
+                width: max-content;
                 font-size: 2rem;
+                padding: 5% auto;
             }
         }
 
@@ -43,6 +44,7 @@ body {
 
         .thirdContain {
             margin-top: 3rem;
+
             a {
                 color: white;
                 text-decoration: none;
@@ -124,13 +126,13 @@ body {
     }
 }
 
-.user-list {
+.tableGeneral {
     width: 100%;
 
     table {
         width: 100%;
         border-collapse: collapse;
-        background-color: #d3d3d3;
+        background-color: #b8b8b8;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     }
 
@@ -160,17 +162,32 @@ body {
         }
     }
 
-    .actions {
-        a {
-            display: inline-block;
-            margin-right: 5px;
+    .imgNft {
+        width: 120px;      
+    }
+
+    .actionBtnContainer {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .actionBtn {
+            width: fit-content;
+            border: #000000 solid 1px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 5%;
+            color: rgb(0, 0, 0);
+            margin-left: 1rem;
+            font-weight: bold;
             text-decoration: none;
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: #fff;
+            margin: 5%;
+
 
             &:hover {
-                background-color: #0056b3;
+                background-color: back;
+                color: #9ee9f3;
             }
         }
     }

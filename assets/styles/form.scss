@@ -1,0 +1,101 @@
+.linkCreateNew {
+    float:right;
+    background-color: rgb(216, 216, 216);
+    border-radius: 5px;
+    padding: 1%;
+    color: rgb(0, 0, 0);
+    margin-right: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border: black 1px solid;
+
+
+    &:hover {
+        background-color: white;
+        color: rgb(0, 0, 0);
+    }
+}
+
+.custom-form-class {
+
+    input,
+    textarea,
+    select {
+        margin-left: 1rem;
+    }
+
+    #user,
+    #category,
+    #nft,
+    #gallery,
+    #sub_category,
+    #comment {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+}
+
+.bottomBtnShow {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.showNft {
+    position: relative;
+
+    img {
+        border-radius: 15px;
+        border: 1px solid black;
+        right: 0;
+        position: absolute;
+        width: 50%;
+    }
+}
+
+.ShowTable {
+    margin-bottom: 1rem;
+}
+
+.updateBtn {
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: white;
+        color: rgb(0, 0, 0);
+    }
+}
+
+.btnToBack {
+    background-color: rgb(216, 216, 216);
+    border-radius: 5px;
+    padding: 1%;
+    color: rgb(0, 0, 0);
+    margin-right: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border: black 1px solid;
+
+
+    &:hover {
+        background-color: white;
+        color: rgb(0, 0, 0);
+    }
+}
+
+.deleteBtn {
+    background-color: rgb(66, 16, 16);
+    color: white;
+    cursor: pointer;
+    margin: 0.5rem 0 1rem;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: white;
+        color: rgb(0, 0, 0);
+    }
+}

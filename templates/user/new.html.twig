@@ -1,15 +1,11 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}New SubCategory
+{% endblock %}
 
-{% block body %}
-	<div class="containerNewUser">
-		<div class="back">
-			<h1>Create new User</h1>
-			{% block content %}
-				{{ include('user/_form.html.twig') }}
-			{% endblock %}
-
-			<a href="{{ path('') }}">back to list</a>
-		</div>
-	</div>
+{% block pagecontent %}
+	<h1>Créer nouvel utilisateur</h1>
+		{{ include('user/_form.html.twig') }}
+	
+	<a class='btnToBack' href="{{ path('app_user_index') }}">Retour</a>
 {% endblock %}

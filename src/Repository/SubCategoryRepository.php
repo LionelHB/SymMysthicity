@@ -16,6 +16,13 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class SubCategoryRepository extends ServiceEntityRepository
 {
+    public function findAllOrderedByName()
+    {
+        return $this->createQueryBuilder('s')
+            ->orderBy('s.name', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, SubCategory::class);

@@ -26,14 +26,14 @@ class UserController extends AbstractController
         $users = $paginator->paginate(
             $userRepository->findAll(),
             $request->query->getInt('page', 1),
-            8
+            6
         );
         return $this->render('user/index.html.twig', [
             'users' => $users,
         ]);
     }
 
-    #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'app_user_new', methods: ['GET', 'POST'])]
     public function new(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $passwordHasher): Response
     {
         $user = new User();

@@ -1,0 +1,19 @@
+.titleImg{
+    display: flex;
+    justify-content: space-evenly;
+    img{
+        width: 40%;
+    }
+}
+.statsListTotal {
+    display: flex;
+    flex-direction: column;
+    
+    .statsList {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: black 2px solid;
+
+    }
+}

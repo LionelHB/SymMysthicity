@@ -40,13 +40,14 @@ security:
     access_control:
         - { path: ^/login, roles: PUBLIC_ACCESS  }
         - { path: ^/logout, roles: PUBLIC_ACCESS  }
+
         - { path: ^/api/login, roles: PUBLIC_ACCESS }
         - { path: ^/api/docs, roles: PUBLIC_ACCESS }
         - { path: ^/api/register, roles: PUBLIC_ACCESS }
         - {
               path: ^/api/nfts,
               roles: IS_AUTHENTICATED_FULLY,
-              method: [POST, PUT, DELETE],
+              method: [POST, PUT, DELETE], 
           }
         - {
               path: ^/api/users,
@@ -54,6 +55,5 @@ security:
               method: [POST, PUT, DELETE],
           }
         
-        - { path: ^/api/adresses, roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/api/login_check, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/, roles: ROLE_ADMIN }
+        # - { path: ^/, roles: ROLE_ADMIN }

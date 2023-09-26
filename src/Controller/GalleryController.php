@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Knp\Component\Pager\PaginatorInterface; 
 use App\Entity\Gallery;
 use App\Form\GalleryType;
 use App\Repository\GalleryRepository;
@@ -15,10 +16,16 @@ use Symfony\Component\Routing\Annotation\Route;
 class GalleryController extends AbstractController
 {
     #[Route('/', name: 'app_gallery_index', methods: ['GET'])]
-    public function index(GalleryRepository $galleryRepository): Response
+    public function index(GalleryRepository $galleryRepository, PaginatorInterface $paginator, Request $request): Response
     {
+        $galleries = $paginator->paginate(
+            $galleryRepository->findAll(),
+            $request->query->getInt('page', 1), 
+            5 
+        );
+
         return $this->render('gallery/index.html.twig', [
-            'galleries' => $galleryRepository->findAll(),
+            'galleries' => $galleries, // Utilisez les résultats paginés
         ]);
     }
 
@@ -71,7 +78,7 @@ class GalleryController extends AbstractController
     #[Route('/{id}', name: 'app_gallery_delete', methods: ['POST'])]
     public function delete(Request $request, Gallery $gallery, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$gallery->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $gallery->getId(), $request->request->get('_token'))) {
             $entityManager->remove($gallery);
             $entityManager->flush();
         }
