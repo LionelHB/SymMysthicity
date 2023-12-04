@@ -52,7 +52,7 @@ App\Entity\Nft:
         dateFirstSale: '<dateTimeBetween("2008-11-01", "2018-02-12")>'
         dateLastSale: '<dateTimeBetween("2018-02-13", "now")>'
         identificationKey: '<word(17)>'
-        PathNft: "fedefgdv"
+        PathNft: "public/assets/nft"
         price: <randomFloat(6, 0, 3)>
         isPublic: "<boolean(98)>"
         quantity: "<numberBetween(1, 3)>"
